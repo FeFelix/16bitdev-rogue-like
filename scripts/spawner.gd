@@ -5,7 +5,7 @@ extends Node2D
 @export var enemy_types: Array[Enemy]
 
 var distance: float = 400.0
-var damage: float
+var can_spawn: bool = true
 
 var minute: int:
 	set(value):
@@ -20,7 +20,15 @@ var second: int:
 			minute +=1
 		%Second.text = str(second).lpad(2, "0")
 
+func _physics_process(delta: float) -> void:
+	if get_tree().get_node_count_in_group("Enemy") < 700:
+		can_spawn = true
+	else:
+		can_spawn = false
+
 func spawn(pos: Vector2, elite:bool = false)-> void:
+	if not can_spawn and not elite:
+		return
 	var enemy_stance: CharacterBody2D = enemy.instantiate()
 	
 	enemy_stance.type = enemy_types[min(minute, enemy_types.size()-1)]

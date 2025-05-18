@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://c56yabhtd8xj5"]
+
+[ext_resource type="Script" uid="uid://guun4kr1djjs" path="res://scripts/enemy_type.gd" id="1_oanfx"]
+[ext_resource type="Texture2D" uid="uid://b5mf07py85r1a" path="res://assets/RPG Battlers 3/3 v1.png" id="2_fi4mf"]
+
+[resource]
+script = ExtResource("1_oanfx")
+title = "EyeLegs"
+texture = ExtResource("2_fi4mf")
+health = 3.0
+damage = 5.0
+metadata/_custom_type_script = "uid://guun4kr1djjs"

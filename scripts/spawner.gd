@@ -20,7 +20,7 @@ var second: int:
 			minute +=1
 		%Second.text = str(second).lpad(2, "0")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if get_tree().get_node_count_in_group("Enemy") < 700:
 		can_spawn = true
 	else:
